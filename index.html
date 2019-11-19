@@ -1,0 +1,1467 @@
+<!DOCTYPE html>
+<html data-dpr="1" style="font-size: 36px;" lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>模板</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" type="text/css" href="css/index.css"/>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<link rel="stylesheet" type="text/css" href="css/cart.css">
+		<script src="js/jquery.min.js" type="text/javascript"></script>
+		<script src="js/flexible.js" type="text/javascript"></script>
+		<script src="js/swiper.min.js" type="text/javascript"></script>
+		<script src="js/index.js" type="text/javascript"></script>
+		<link rel="stylesheet" href="https://unpkg.com/mescroll.js@1.4.1/mescroll.min.css">
+		<script src="https://unpkg.com/mescroll.js@1.4.1/mescroll.min.js" charset="utf-8"></script>
+		<style>
+			body,html{
+				/* height: 100%; */
+				overflow: auto;
+			}
+			.main_info {
+				position: relative;
+				/* height: 100%; */
+				overflow-y: auto;
+			}
+			.cart_info{
+				height: 100%;
+				width: 100%;
+				top: 0;
+				left: 0;
+				right: 0;
+				transform: translateX(-100%);
+				z-index: 99;
+				bottom: 0;
+				position: fixed;
+				background:white;
+				transition: all 0.3s ease 0.3s;
+			}
+		</style>
+	</head>
+	<body style="background: gainsboro;overflow: hidden;padding: 0 8px;box-sizing: border-box;">
+		
+        <div class="main_info">
+			<header>
+				<div class="title" style="margin-bottom: 0;display: none;">商品名称</div>
+				<div class="banner_wrap">
+					<div class="video_wrap">
+						<img class="poster" src="https://sms-shop.oss-cn-beijing.aliyuncs.com/ncheaner/banner.jpg"/>
+						<!-- <img class="video_logo" src="img/video.png"/> -->
+						<!-- <video width="100%" style="display: none;" height="100%" controls="controls" preload="auto" webkit-playsinline="true" x-webkit-airplay="allow">
+							<source src="https://sms-shop.oss-cn-beijing.aliyuncs.com/ncheaner/cleaner.mp4" type="video/mp4" preload="metadata"></source>
+						</video> -->
+					</div>
+					
+					<div class="swiper-container banners" style="display: none;"> 
+						<div class="swiper-wrapper">
+							<div class="swiper-slide"><img src="https://m.360buyimg.com/mobilecms/s750x750_jfs/t27742/37/2198795606/558850/74caa786/5bfb5032N8ea465ee.jpg!q80.dpg.webp"/></div>
+							<div class="swiper-slide"><img src="https://m.360buyimg.com/mobilecms/s843x843_jfs/t25063/303/2532322508/576077/f7f992c9/5be92307Nc3c9953e.jpg!q70.dpg.webp"/></div>
+							<div class="swiper-slide"><img src="https://m.360buyimg.com/mobilecms/s843x843_jfs/t27310/260/1672123245/544774/d5ce75ca/5be92fb7N7508d468.jpg!q70.dpg.webp"/></div>
+						</div>
+						<div class="swiper-pagination"></div>
+					</div>
+				</div>
+				
+				
+				
+				<div class="buy" style="background: #44361C;">
+					<div class="price_area">
+						<p>￥<span class="price_now">2</span></p>
+						<p>原价<span style=""><span>￥</span><span class="price_old">369</span></span></p></div>		
+					<div class="countdown">
+						<div class="buy_num"><span></span>人已购买</div>
+						<div class="time_box">
+							<!--<i class="js_count_d">0</i> 天-->
+							<i class="js_count_h"></i> 时
+							<i class="js_count_m"></i> 分
+							<i class="js_count_s"></i> 秒
+						</div>
+					</div>
+					<!--<div class="info_detail" style="text-align: center;">
+						<div class="info_msg"></div>
+						<div class="info_coupon">
+							<span>限时抢购</span>
+							<span>厂家直销</span>
+							<span>七天无理由退换货</span>
+						</div>
+					</div>-->
+					<a href="#warm_tips" class="buy_now" perf-id="2" perf-click="details_qianggou_1">立即抢购</a>
+				</div>
+			</header>
+	
+			<main>
+				<style type="text/css">
+					main .product_info{
+						width: 100%;
+						border-top: 2px solid blue;
+						border-bottom: 2px solid blue;
+						padding: 0 4px;
+						box-sizing: border-box;
+						background: white;
+						margin-top: 40px;
+					}
+					main .product_info p{
+						text-align: center;
+						padding: 20px 0;
+						font-size: 0.6rem;
+					}
+					main .product_info img{
+						width: 100%;
+						display: block;
+					}
+				</style>
+				<div class="product_info">
+					<p>商品信息</p>
+					<img src="img/2.jpg"/>
+					<img src="img/3.jpg"/>
+					<img src="img/4.jpg"/>
+				</div>
+	
+				<div class="recommend">
+					<div class="title">
+						<img src="./img/recommend.png"/>
+					</div>
+					
+					<div class="moreproduct" id="moreproduct">
+						<!-- *********
+						*  模板商品信息
+						*********** -->
+						</div>
+				        <!-- 
+							**订单详情页
+						 -->
+						<div class="warm_tips" id="warm_tips"  style="padding-left: 15px;font-size: 0.42rem;">
+							<div class="public_title">
+								<span>订单信息</span>
+							</div>
+							<!--订单-->
+							<div id="order">
+								<div class="warp">
+									<form id="form" name="form" method="post">
+										<input type="hidden" name="product_id" value="1" />
+										<div class="bdbox">
+											<div class="not3p">
+												<em style="color: red;font-weight: bold;">*</em>产品
+											</div>
+											<div class="not3orderkuai">
+												<ul>
+													<li class="mouon">
+														<input type="radio" name="product" id="a0" value="四大名著" alt="58" checked=" ">
+														<div class="h100a">四大名著</div>
+													</li>
+												</ul>
+											</div>
+										</div>
+										<!-- 数量 -->
+										<div class="bdbox">
+											<label class="bdxx"><em>*</em>数量</label>
+											<div class="product" style="float: left;width: 4rem">
+												<a class="down1"> - </a>
+												<input class="num2" name="num2" value="1" onkeyup="value=value.replace(/[^\d]/g, '') " style="width: 40%;z-index: 100;text-align: center; " />
+												<a class="up1"> + </a>
+												<span style="float: left;color: red;height: 0.6rem;line-height: 0.6rem;margin-left: 6px;">套</span>
+											</div>
+											
+										</div>
+										<!-- 颜色 -->
+										<!-- <div class="bdbox">
+											<label class="bdxx"><em>*</em>颜色</label>
+											<div class="not3orderkuai1">
+												<ul>
+													<li class="mouon"><input type="radio" name="product_color" id="a0" value="棕色" alt="99" checked=" ">
+														<div class="h100a">棕色</div>
+													</li>
+												</ul>
+											</div>
+										</div> -->
+										<!--新增赠品属性_20160906-->
+										<div class="zengsong"></div>
+										<!--附加属性e-->
+										<div class="bdbox">
+											<label class="bdxx"><em>*</em>姓名</label>
+											<div class="textbox">
+												<input type="text" name="name" id="name" />
+											</div>
+										</div>
+										<div class="bdbox">
+											<label class="bdxx"><em>*</em>手机</label>
+											<div class="textbox">
+												<input type="text" name="mob" id="mob" />
+											</div>
+										</div>
+										<div class="bdbox">
+											<label class="bdxx"><em>*</em>地区</label>
+											<div class="xlbox">
+												<select name="province" id="province" class="dqxl" onchange="changeProvince();">
+													<option value="">选省份</option>
+												</select>
+												<select name="city" id="city" class="dqxl">
+													<option value="">选城市</option>
+												</select>
+												<select name="area" id="area" class="dqxl">
+													<option value="">选地区</option>
+												</select>
+											</div>
+										</div>
+										<div class="bdbox">
+											<label class="bdxx"> <em>*</em>地址 </label>
+											<div class="textbox">
+												<input type="text" name="address" id="address" />
+											</div>
+										</div>
+										<!-- 优惠券 -->
+										<div class="bdbox">
+											<label class="bdxx"><em>*</em>金额</label>
+											<div class="text3box">
+												<input name="price" class="price total_price" value="0" readonly="" style="width:80px;" />元
+												<span id="zfbyh"></span>
+												<font color="red" style="font-size: 0.373rem;">此价格是使用红包优惠码后的价格</font>
+											</div>
+										</div>
+										<div class="bdbox">
+											<label class="bdxx"><em>*</em>付款</label>
+											<div class="dxbox">
+												<!--<input type="radio" checked="checked" name="pay" id="b1" value="cod" onclick="return changeItem(0);" />-->
+												<label for="b1">货到付款</label>
+											</div>
+										</div>
+										<div class="bdbox">
+											<label class="bdxx">留言</label>
+											<div class="text2box">
+												<textarea name="guest"></textarea>
+											</div>
+										</div>
+										<input type="hidden" name="gzid" value="shu_07_03_3w1150" />
+										<div class="subbox">
+											<input type="hidden" name="proh" id="proh" value="" />
+											<input type="hidden" name="cityh" id="cityh" value="" />
+											<input type="hidden" name="areah" id="areah" value="" />
+											<input type="hidden" name="productId" id="productId" value='12122'>
+											<div style="display:flex">
+													<!-- <input type="button" name="submit" id="addcar" value="添加购物车" style="margin-top: 20px;display: block;margin:40px auto;font-size: 0.43rem;padding: 0;width: 3rem;height: 1rem;"/> -->
+												<input type="button" name="submit" id="btn" value="立即提交订单" style="margin-top: 40px;display: block;margin:40px auto;font-size: 0.43rem;padding: 0;width: 6rem;height: 1rem;"/>
+											</div>
+										</div>
+									</form>
+									<div style="display:none">
+									</div>
+									<div style="clear:both;"></div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				
+				
+	
+			</main>
+		   
+			<footer style="position: fixed;bottom: 0;left: 0;width: 100%;">
+				
+				<!-- <div class="foot_time"> -->
+					<!-- <div>
+						<img src="https://lhtpic01.oss-cn-shenzhen.aliyuncs.com/common/time999.png"/>
+					</div>
+					<div>
+						<span style="margin-right: 25px;">
+							<i class="js_count_hh">1</i> 时
+							<i class="js_count_mm">43</i> 分
+							<i class="js_count_ss">15</i> 秒
+						</span>
+					</div> -->
+				<!-- </div> -->
+				<div class="goshop">
+					<img src="./img/shop.png" alt="">
+					<span>商城</span>
+				</div>
+				<div class="gocar">
+					<img src="./img/car.png" alt="">
+					<span>购物车</span>
+				</div>
+				<div class="bottom_info">
+					<a href="#warm_tips" class="cart addcar" id="addcar">加入购物车</a>
+					<a href="#warm_tips" class="buy_now" perf-id="2" perf-click="details_qianggou_1">立即抢购</a>
+					<!-- <a href="./price.html" class="mall">商城</a> -->
+				</div>
+			</footer>
+
+
+			<!-- 
+			******
+			**购物车
+			******
+		 -->
+		 <div class="cart_info">
+			<head>
+				<div class="top">
+					<div class="goback"></div>
+					<div style="width: 60%">
+						<h1 style="text-align: center;">购物车</h1>
+					</div>
+				</div>
+			</head>
+			<main>
+				<div class="car_topnav">
+					<div class="car_top">
+						<div class="adress">
+							<i class="adress_icon">
+	
+							</i>
+							<div class="text">
+								某某地址  某某市
+							</div>
+						</div>
+						<div class="manage">管理</div>
+					</div>
+					
+				</div>
+				<div class="section" id="section">
+				</div>
+			 </main>
+			 <style type="text/css">
+				 footer{
+					position: fixed;
+					width: 100%;
+					height: 50px;
+					bottom: 0;
+					left: 0;
+					display: flex;
+					justify-content: space-around;
+					align-items: center;
+					font-size: 14px;
+					z-index: 99;
+				}
+				
+				footer .settle_accounts{
+					display: flex;
+					width: 70%;
+					height: 100%;
+					background: palegreen;
+					align-items: center;
+					box-sizing: border-box;
+					padding-right: 15px;
+					justify-content: flex-end;
+				}
+				
+				footer .del{
+					display: flex;
+					width: 70%;
+					height: 100%;
+					align-items: center;
+					justify-content: flex-end;
+					box-sizing: border-box;
+					padding-right: 15px;
+					display: none;
+				}
+				
+				footer .del span{
+					border: 1px solid orangered;
+					border-radius: 20px;
+					color: orangered;
+					width: 2rem;
+					height: 1rem;
+					line-height: 1rem;
+					text-align: center;
+				}
+				
+				footer .select_all{
+					background: tan;
+					width: 30%;
+					height: 100%;
+					display: flex;
+					align-items: center;
+					box-sizing: border-box;
+					padding-left: 15px;
+				}
+				
+			   
+				
+				footer .select_all .circle{
+					width: 20px;
+					height: 20px;
+					margin-right: 10px;
+					background-image: url(https://wq.360buyimg.com/wxsq_trade/cart_vue/main/images/sprite.img_default_437_131a0187.png);
+					background-position: 0 -48px;
+					background-size: 116px 110px;
+				}
+				
+				footer .select_all .true{
+					   background-position: -80px -40px;
+			   }
+				
+				footer .settle_accounts p:first-child span{
+					color: orangered;
+				}
+
+				footer .settle_accounts p:last-child{
+					background: orangered;
+					border-radius: 20px;
+					color: white;
+					margin-left: 10px;
+					width: 2rem;
+					height: 1rem;
+					line-height: 1rem;
+					text-align: center;
+				}
+				
+				
+			 </style>
+			 <footer>
+				 <div class="select_all">
+					 <span class="circle"></span>
+					 <span>全选</span>
+				 </div>
+				 <div class="settle_accounts">
+					 <p>合计: <span>￥</span><span class="prices">0</span></p> 
+					 <p><span>结算</span>(<i>0</i>)</p>
+				 </div>
+				 <div class="del">
+					 <span>删除</span>
+				 </div>
+			 </footer>
+			 </div>
+		</div>
+		<!-- 
+			****弹框
+		 -->
+		 <div class="toast"></div>
+		 <!-- 
+			 ****购物栏收货信息修改
+		  -->
+		  <div class="modefy"></div>
+		  <!-- 信息 -->
+		  <div class="modefy_info">
+				<div class="address_msg">
+					<div class="navigate">
+							<div class="modefy_up" style="color: red;float:right;">确定</div>
+					</div>
+					<div class="navigate">
+						<label>所在地区</label>
+						<select name="province" id="province1" class="dqxl">
+							<option value="">选省份</option>
+						</select>
+						<select name="city" id="city1" class="dqxl">
+							<option value="">选城市</option>
+						</select>
+						<select name="area" id="area1" class="dqxl">
+							<option value="">选地区</option>
+						</select>
+					</div>
+					<div class="navigate">
+						<label>详细地址</label>
+						<input type="text" id="address_info" value="" placeholder="请输入详细地址">
+					</div>
+					<div class="navigate">
+						<label>收货人</label>
+						<input type="text" id="userName" value="" placeholder="请输入收货人姓名">
+					</div>
+					<div class="navigate">
+						<label>联系号码</label>
+						<input type="text" id="mobile" value="" placeholder="请输入联系人电话号码">
+					</div>
+				</div>
+		  </div>
+
+		  <!-- 商城 -->
+		  <div class="shop_page">
+			<div class="shop_nav">
+				<div class="shop_goback goback"></div>
+				<div style="width: 60%">
+					<h1 style="text-align: center;">商城</h1>
+				</div>
+			</div>
+			<div class="shoppage_list" id="shoppage_list">
+				
+			</div>
+			<div id="mescroll" class="mescroll"> 
+				<div> 
+					
+				</div>
+			</div>
+		  </div>
+	</body>
+	<script src="./js/template.js"></script>
+	<script src="./js/diqu.js"></script>
+	<script src="./js/order_info.js"></script>
+	<!-- 
+		****猜你喜欢模板引擎
+	 -->
+	<script id="tpl" type="text/html">
+		<%for(i = 0; i < list.length ; i ++) {%>
+			<div class="productlist" onclick = "redens('<%:=list[i].productId%>')">
+				<div class="proimg">
+					<img src="<%:=`${BASE_URL}${list[i].bannerPic}`%>" alt="">
+				</div>
+				<div class="promsg">
+					<h1><%:=list[i].productName%></h1>
+					<span><%:=list[i].originalPrice%></span>
+				</div>
+			</div>
+		<%}%>
+	</script>
+	<!-- 
+		****购物车模板引擎
+	 -->
+	<script id="tpl1" type="text/html">
+		<% if(list!== null) {%>
+		<%for(i = 0; i < list.length ; i ++) {%>
+		<div class="item item_single" style="margin-bottom: 20px;" data-id = "<%:=list[i].productId%>" >
+			<div class="goods">
+				<div class="icon_select">
+					<i></i>
+				</div> 
+				<img  src="<%:=list[i].bannerImg%>" class="image"> 
+				<div class="content">
+					<div class="name">
+						<span class="mod_tag">
+							<img src="https://img11.360buyimg.com/jdphoto/s88x28_jfs/t26887/23/1744445436/2452/b4547785/5bebd299N13bd2a1f.png" class="tag_img">
+						</span>
+						<%:=list[i].product_name%>
+					</div>
+				</div> 
+				<div class="sku_line">
+					<div class="sku"><%:=list[i].product_name%></div> 
+				</div> 
+				<div class="price_line">
+					<div class="price">
+						¥<em class="int"><%:=list[i].uninprice%></em><span></span>
+					</div>
+					<div class="num_wrap">
+						<span class="minus"></span>
+						<div class="input_wrap"><input type="tel" class="num" value="<%:=list[i].buy_number%>" readonly></div>
+						<span class="plus"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<%}%>	
+		<%}%>
+		<% if(list == null){%>
+			<img src="https://img11.360buyimg.com/jdphoto/s180x180_jfs/t18163/292/540553659/74408/adeb7463/5a93c51cN3bb5e37b.png" class="empty_icon">
+			<h4 style="text-align:center">购物车为空，赶紧购物吧</h4>
+		<%}%>	
+	</script>
+	<script id="tpl2" type="text/html">
+		<%for(i = 0; i < list.length ; i ++) {%>
+			<div class="productlist" onclick = "redens('<%:=list[i].productId%>')">
+				<div class="proimg">
+					<img src="<%:=`${BASE_URL}${list[i].bannerPic}`%>" alt="">
+				</div>
+				<div class="promsg">
+					<h1><%:=list[i].productName%></h1>
+					<span><%:=list[i].originalPrice%></span>
+				</div>
+			</div>
+		<%}%>
+	</script>
+	<script>
+		/* ****
+		* @userName  用户名
+		* @userMob   手机号
+		* @userProvince  省
+		* @userCity   市
+		* @userArea	  地区
+		* @userAddress	详细地址
+		* @productId  商品唯一id
+		* @product    商品名称
+		* @bannerImg   主图
+		* @mod_tag     购物车主图
+		* @car_proinfo  购物车商品信息
+		* @car_int    购物车价格
+		* @input_wrapNum  购物车数量
+		* @car_unitPrice  购物车商品单价
+		* @car_list      购物车列表
+		* @car_msg       购物车详情
+		* @buy_number    购物车跳转数量
+		* @total_price   总价
+		* @car_listinfo   购物车数据
+		*/
+		let userName;
+		let userMob;
+		let userProvince;
+		let userCity;
+		let userArea;
+		let userAddress;
+		var productId;
+		var product;
+		var bannerImg;
+		var car_list = [];
+		var mod_tag;
+		var car_proinfo;
+		var car_int;
+		var input_wrapNum;
+		var car_unitPrice;
+		var car_msg = [];
+		var buy_number;
+		var total_price;
+
+		/* ******* 
+		* 弹出轮子
+		* @ content 消息
+		*/
+		function toastS(content){
+			let toast = document.querySelector(".toast");
+			toast.style.cssText = "display:block";
+			toast.innerHTML = content;
+			setTimeout(function(){
+				toast.style.cssText = "display:none";
+			},2000)
+		}
+		/**********
+		* 购物车
+		********/
+		
+		//首页 
+		
+	  
+		var goback = document.querySelector(".cart_info #goback");
+		var tops = document.querySelector(".goback");
+		var cart_info = document.querySelector(".cart_info");
+		tops.onclick = function (e){
+			e.preventDefault();
+			e.stopPropagation();
+			cart_info.style.cssText = 'transform: translateX(-100%)';
+		};
+		/* ****
+		*购物车进入
+		*/
+		var cart_enter = document.querySelector(".gocar");
+		cart_enter.onclick = function(){
+
+			cart_info.style.cssText = 'transform: translateX(0%)';
+			var tpl = template(document.getElementById('tpl1').innerHTML);
+			var html = tpl({list:JSON.parse(sessionStorage.getItem("car_listinfo"))});
+			document.getElementById('section').innerHTML = html;
+			let buy_topnav = document.querySelector(".car_topnav");
+			if(JSON.parse(sessionStorage.getItem("car_listinfo")) == null){
+				buy_topnav.style.cssText = 'display:none'
+			}else{
+				buy_topnav.style.cssText = 'display:block'
+
+			};
+			// 收货地址
+			let userArea;
+			let userCity;
+			let userProvince;
+			let modefy = JSON.parse(sessionStorage.GOOD_MODEFY);
+			userArea = modefy.userArea;
+			userCity = modefy.userCity;
+			userProvince = modefy.userProvince;
+			document.querySelector(".adress .text").innerHTML = `${userProvince}${userArea}${userCity}`;
+		};
+		/* ***** 
+		*  商品数据
+		*/
+		var TOTAL_DATA = [];
+		/* **** 
+		*  首屏数据
+		*/
+		const First_data = [{backgroundMusic:null,bannerMv:null,bannerPic:"mall_product_001/1192342616495583232/1192342619444178944.jpeg",bidPrice:0,buyCount:"52680",categoryId:157,createtime:"2019-11-07 15:26:48",creator:"songjianbo",customerEvaluation:"赞",id:523,mpId:0,originalPrice:"399",pkSet:null,price:"158",productCount:0,productId:"1192342616495583232",productInfo:"mall_product_001/1192342616495583232/1192342616495583233.jpeg,mall_product_001/1192342616495583232/1192342617196032000.jpeg,mall_product_001/1192342616495583232/1192342617640628224.jpeg,mall_product_001/1192342616495583232/1192342618294939648.jpeg,mall_product_001/1192342616495583232/1192342618592735232.jpeg,mall_product_001/1192342616495583232/1192342618768896000.jpeg,mall_product_001/1192342616495583232/1192342618945056768.jpeg,mall_product_001/1192342616495583232/1192342619129606144.jpeg",productName:"微光夜视高倍高清双筒望远镜",productProperty:"{}",productUnitPrice:"158",randomId:"27a6_ff",remark:"",status:0,submitPage:"1",tempId:"006",tempPath:"product_006",themeColor:"#9c0202",title:"微光夜视高倍高清双筒望远镜",toEndTime:"0|19|54|56",topPage:null,upId:0}];
+	   
+		/* ********
+		*  页面跳转获取数据
+		*/
+		const BASE_URL = 'http://sms-shop.oss-cn-beijing.aliyuncs.com/';
+		const SHOP_INFO = [{
+			bannerPic:"mall_product_001/1192341374738329600/1192341377363963904.jpeg",
+			bidPrice:7,
+			buyCount:"78780",
+			categoryId:157,
+			createtime:"2019-10-31 18:54:43",
+			creator:"zhenghui",
+			customerEvaluation:"#1#好",
+			id:444,
+			mpId:0,
+			originalPrice:"199",
+			pkSet:null,
+			price:"89",
+			productCount:0,
+			productId:"1189858228293824513",
+			productInfo:"mall_product_001/1192341374738329600/1192341374738329601.jpeg,mall_product_001/1192341374738329600/1192341375623327744.jpeg,mall_product_001/1192341374738329600/1192341376101478400.jpeg,mall_product_001/1192341374738329600/1192341376437022720.jpeg,mall_product_001/1192341374738329600/1192341376776761344.jpeg,mall_product_001/1192341374738329600/1192341376978087936.jpeg,mall_product_001/1192341374738329600/1192341377166831616.jpeg",
+			productName:"玛莎拉蒂三叉戟休闲钢带男士石英腕表",
+			productProperty:"{}",
+			productUnitPrice:"89",
+			randomId:"1_9932e",
+			remark:"",
+			status:0,
+			submitPage:"1",
+			tempId:"006",
+			tempPath:"product_006",
+			themeColor:"#9c0202",
+			title:"5个装防尘防雾霾带呼吸阀口罩",
+			toEndTime:"0|22|44|55",
+			topPage:null,
+			upId:0},{
+			bannerPic:"mall_product_001/1192019460027281408/1192019461365264384.jpeg",
+			bidPrice:7,
+			buyCount:"78780",
+			categoryId:157,
+			createtime:"2019-10-31 18:54:43",
+			creator:"zhenghui",
+			customerEvaluation:"#1#好",
+			id:444,
+			mpId:0,
+			originalPrice:"199",
+			pkSet:null,
+			price:"89",
+			productCount:0,
+			productId:"1189858228293824512",
+			productInfo:"mall_product_001/1192019460027281408/1192019460027281409.jpeg,mall_product_001/1192019460027281408/1192019460555763712.jpeg,mall_product_001/1192019460027281408/1192019460891308032.jpeg,mall_product_001/1192019460027281408/1192019461126189056.jpeg",
+			productName:"聚福三宝",
+			productProperty:"{}",
+			productUnitPrice:"89",
+			randomId:"1_9932e",
+			remark:"",
+			status:0,
+			submitPage:"1",
+			tempId:"006",
+			tempPath:"product_006",
+			themeColor:"#9c0202",
+			title:"聚福三宝",
+			toEndTime:"0|22|44|55",
+			topPage:null,
+			upId:0},{
+			bannerPic:"mall_product_001/1189858228293824512/1189858230822989824.png",
+			bidPrice:7,
+			buyCount:"78780",
+			categoryId:157,
+			createtime:"2019-10-31 18:54:43",
+			creator:"zhenghui",
+			customerEvaluation:"#1#好",
+			id:444,
+			mpId:0,
+			originalPrice:"199",
+			pkSet:null,
+			price:"89",
+			productCount:0,
+			productId:"1189858228293824514",
+			productInfo:"mall_product_001/1189858228293824512/1189858228293824513.png,mall_product_001/1189858228293824512/1189858229413703680.png,mall_product_001/1189858228293824512/1189858229816356864.png,mall_product_001/1189858228293824512/1189858230097375232.png,mall_product_001/1189858228293824512/1189858230378393600.png,mall_product_001/1189858228293824512/1189858230541971456.png",
+			productName:"5个装防尘防雾霾带呼吸阀口罩",
+			productProperty:"{}",
+			productUnitPrice:"89",
+			randomId:"1_9932e",
+			remark:"",
+			status:0,
+			submitPage:"1",
+			tempId:"006",
+			tempPath:"product_006",
+			themeColor:"#9c0202",
+			title:"5个装防尘防雾霾带呼吸阀口罩",
+			toEndTime:"0|22|44|55",
+			topPage:null,
+			upId:0}];
+
+
+			// 更多商品数据
+		const SHOPMORE_INFO = [{
+		bannerPic:"mall_product_001/1192361776462131200/1192361782137024512.png",
+		bidPrice:7,
+		buyCount:"78780",
+		categoryId:157,
+		createtime:"2019-10-31 18:54:43",
+		creator:"zhenghui",
+		customerEvaluation:"#1#好",
+		id:444,
+		mpId:0,
+		originalPrice:"199",
+		pkSet:null,
+		price:"89",
+		productCount:0,
+		productId:"1192361776462131200",
+		productInfo:"mall_product_001/1192361776462131200/1192361776462131201.png,mall_product_001/1192361776462131200/1192361778571866112.png,mall_product_001/1192361776462131200/1192361779767242752.png,mall_product_001/1192361776462131200/1192361780337668096.png,mall_product_001/1192361776462131200/1192361780677406720.png,mall_product_001/1192361776462131200/1192361781163945984.png,mall_product_001/1192361776462131200/1192361781377855488.png,mall_product_001/1192361776462131200/1192361781763731456.png",
+		productName:"*网红爆款金桔百香果冻干茶",
+		productProperty:"{}",
+		productUnitPrice:"89",
+		randomId:"1_9932e",
+		remark:"",
+		status:0,
+		submitPage:"1",
+		tempId:"006",
+		tempPath:"product_006",
+		themeColor:"#9c0202",
+		title:"*网红爆款金桔百香果冻干茶",
+		toEndTime:"0|22|44|55",
+		topPage:null,
+		upId:0},{
+		bannerPic:"mall_product_001/1192361319186526208/1192361324928528384.png",
+		bidPrice:7,
+		buyCount:"78780",
+		categoryId:157,
+		createtime:"2019-10-31 18:54:43",
+		creator:"zhenghui",
+		customerEvaluation:"#1#好",
+		id:444,
+		mpId:0,
+		originalPrice:"199",
+		pkSet:null,
+		price:"89",
+		productCount:0,
+		productId:"1192361319186526208",
+		productInfo:"mall_product_001/1192361319186526208/1192361319186526209.png,mall_product_001/1192361319186526208/1192361321124294656.png,mall_product_001/1192361319186526208/1192361321560502272.png,mall_product_001/1192361319186526208/1192361322252562432.png,mall_product_001/1192361319186526208/1192361322730713088.png,mall_product_001/1192361319186526208/1192361323091423232.png,mall_product_001/1192361319186526208/1192361323468910592.png,mall_product_001/1192361319186526208/1192361323850592256.png,mall_product_001/1192361319186526208/1192361324198719488.png,mall_product_001/1192361319186526208/1192361324551041024.png",
+		productName:"#免受失眠痛苦//睡眠压片糖果",
+		productProperty:"{}",
+		productUnitPrice:"89",
+		randomId:"1_9932e",
+		remark:"",
+		status:0,
+		submitPage:"1",
+		tempId:"006",
+		tempPath:"product_006",
+		themeColor:"#9c0202",
+		title:"#免受失眠痛苦//睡眠压片糖果",
+		toEndTime:"0|22|44|55",
+		topPage:null,
+		upId:0},{
+		bannerPic:"mall_product_001/1192359662348365824/1192359665649283072.png",
+		bidPrice:7,
+		buyCount:"78780",
+		categoryId:157,
+		createtime:"2019-10-31 18:54:43",
+		creator:"zhenghui",
+		customerEvaluation:"#1#好",
+		id:444,
+		mpId:0,
+		originalPrice:"199",
+		pkSet:null,
+		price:"89",
+		productCount:0,
+		productId:"1192359662348365824",
+		productInfo:"mall_product_001/1192359662348365824/1192359662348365825.png,mall_product_001/1192359662348365824/1192359663354998784.png,mall_product_001/1192359662348365824/1192359663636017152.png,mall_product_001/1192359662348365824/1192359663917035520.png,mall_product_001/1192359662348365824/1192359664202248192.png,mall_product_001/1192359662348365824/1192359664500043776.png,mall_product_001/1192359662348365824/1192359664818810880.png,mall_product_001/1192359662348365824/1192359665120800768.png,mall_product_001/1192359662348365824/1192359665309544448.png,mall_product_001/1192359662348365824/1192359665485705216.png",
+		productName:"爆款抱枕被",
+		productProperty:"{}",
+		productUnitPrice:"89",
+		randomId:"1_9932e",
+		remark:"",
+		status:0,
+		submitPage:"1",
+		tempId:"006",
+		tempPath:"product_006",
+		themeColor:"#9c0202",
+		title:"爆款抱枕被",
+		toEndTime:"0|22|44|55",
+		topPage:null,
+		upId:0}];
+
+		TOTAL_DATA = [...First_data,...SHOPMORE_INFO,...SHOP_INFO];
+		var tpl = template(document.getElementById('tpl').innerHTML);
+		var html = tpl({list:SHOP_INFO});
+		document.getElementById('moreproduct').innerHTML = html;
+
+
+		//更多商品渲染
+		var tpl = template(document.getElementById('tpl2').innerHTML);
+		var html = tpl({list:SHOPMORE_INFO});
+		document.getElementById('shoppage_list').innerHTML = html;
+		// SHOP_INFO = JSON.parse(DATA);
+		// console.log(SHOP_INFO);
+		//更多详情页跳转
+		var poster = document.querySelector(".poster");
+		var price_now = document.querySelector(".price_now");
+        var price_old = document.querySelector(".price_old");
+		var buy_num = document.querySelector('.buy_num span');
+		var js_count_h = document.querySelector('.js_count_h');
+		var js_count_m = document.querySelector('.js_count_m');
+		var js_count_s = document.querySelector('.js_count_s');
+		var product_info = document.querySelector(".product_info");
+	    product = document.getElementsByName('product');
+		var moreproduct = document.querySelector("#moreproduct");
+		var img_list = product_info.querySelectorAll("img");
+		
+		/* ********
+		***渲染数据
+		**********/
+		redens(First_data[0].productId);
+         function redens(x){
+			// window.location.reload();
+			// let datas = SHOP_INFO.filter(function(e,index){
+			let datas = TOTAL_DATA.filter(function(e,index){
+				return e.productId == x
+			});
+			
+			poster.setAttribute("src",`${BASE_URL}${datas[0].bannerPic}`);
+			price_now.innerHTML = datas[0].price;
+			price_old.innerHTML = datas[0].originalPrice;
+			buy_num.innerHTML = `${datas[0].buyCount}人已购买`;
+			js_count_h.innerTEXT = datas[0].toEndTime.split("|")[1];
+			js_count_m.innerHTML = datas[0].toEndTime.split("|")[2];
+			js_count_s.innerHTML = datas[0].toEndTime.split("|")[3];
+			// product_info.removeChild(img_list);
+			product_info.querySelectorAll("img").forEach(function(e){
+				e.remove()
+			})
+			// img_list.forEach(function(e){
+			// 	e.remove()
+			// });
+			let imglist = datas[0].productInfo.split(",");
+			imglist.forEach(function(e,i){
+				var img = document.createElement('img');
+				img.setAttribute("src",`${BASE_URL}${e}`);
+				product_info.appendChild(img);
+			});
+			product.value = datas[0].title;
+			product.alt = datas[0].price;
+			product[0].parentNode.lastChild.previousSibling.innerText = datas[0].title;
+			/* ********
+			****颜色
+			**********/
+			if(datas[0].productProperty != {}){
+				
+			};
+			document.documentElement.scrollTop=0;
+			document.body.scrollTop=0;
+			/* ***
+			* productId  产品唯一id
+			*****/
+			productId = document.getElementById('productId');
+			productId.setAttribute("value", datas[0].productId);
+		    document.querySelector(".shop_page").style.cssText = "transform: translateX(100%);";
+
+			
+		};
+		
+		/********** 
+		*  提交 and  购物车
+		**********/
+		/****** 
+		*添加购物车
+		*/
+		var addcar = document.querySelector("#addcar");
+		addcar.onclick = function(){
+			userName = $("#name").val()
+			userMob = $("#mob").val()
+			userProvince = $("#province option:selected").val()
+			userCity = $("#city option:selected").val()
+			userArea = $("#area option:selected").val()
+			userAddress = $("#address").val()
+			if(!checkUserName(userName)) {
+				$("#name").focus();
+				return false;
+			}
+			if(!checkUserMobile(userMob)) {
+				$("#mob").focus();
+				return false;
+			}
+			if(!checkUserProvince(userProvince)) {
+				$("#province").focus();
+				return false;
+			}
+			if(!checkUserCity(userCity)) {
+				$("#city").focus();
+				return false;
+			}
+			if(!checkUserArea(userArea)) {
+				$("#area").focus();
+				return false;
+			}
+			if(!checkUserAddress(userAddress)) {
+				$("#address").focus()
+				return false;
+			};
+			buy_number = document.querySelector(".num2");
+			total_price = document.querySelector(".total_price").value;
+			bannerImg = poster.getAttribute("src");
+			// productId = document.getElementById('productId').value;
+			
+			console.log(userName,
+						userMob,
+						userProvince,
+						userCity,
+						userArea,
+						userAddress,
+						productId,
+						product[0].alt,
+						product[0].parentNode.lastChild.previousSibling.innerText,
+						bannerImg,
+						product,
+						buy_number.value,
+						total_price,
+						userProvince,
+						userCity,
+						userArea,
+						);
+			/******
+			*  地址消息 
+			*/
+			const GOOD_MODEFY = {
+				userName:userName,
+				userMob:userMob,
+				userProvince:userProvince,
+				userCity:userCity,
+				userArea:userArea,
+				userAddress:userAddress,
+			}
+
+
+			/* ****
+			*   购物车信息
+			* ****/			
+			const CAR_SHOP_INFO = {
+				bannerImg:bannerImg,
+				product:product,
+				buy_number:buy_number.value,
+				total_price:total_price,
+				productId:productId.value,
+				uninprice:product.alt,
+				product_name:product[0].parentNode.lastChild.previousSibling.innerText,
+			};
+			// 存储是否存在
+			car_listinfo = JSON.parse(sessionStorage.getItem("car_listinfo"));
+			if(car_listinfo == null){
+				car_listinfo = [];
+				car_listinfo.push(CAR_SHOP_INFO);
+			};
+			if(!(car_listinfo.map(function(e){return e.productId})).includes(productId.value)){
+				car_listinfo.push(CAR_SHOP_INFO);
+			}
+			car_listinfo = JSON.stringify(car_listinfo);
+			sessionStorage.setItem("car_listinfo",car_listinfo);
+			var tpl = template(document.getElementById('tpl1').innerHTML);
+			var html = tpl({list:JSON.parse(sessionStorage.getItem("car_listinfo"))});
+			document.getElementById('section').innerHTML = html;
+			/******* 
+			*    购物车跳转详细数据
+			********/
+		    // let car_shop = SHOP_INFO.filter(function(e){
+		    let car_shop = TOTAL_DATA.filter(function(e){
+				return e.productId == productId.value;
+			});
+			car_list = JSON.parse(sessionStorage.getItem("car_list"));
+			
+			if(car_list == null){
+				car_list = [];
+				Array.prototype.push.call(car_list,car_shop[0]);		
+			}else if(!(car_list.map(e => { return e.productId})).includes(productId.value)){
+				car_list.push(car_shop[0]);
+			}
+			
+			car_list = JSON.stringify(car_list);
+			/******* 
+			*  添加商品进
+			*******/
+			sessionStorage.setItem("car_list",car_list);
+
+
+			/***** *
+			*  存储收货人信息
+			* *****/
+			sessionStorage.setItem("GOOD_MODEFY",JSON.stringify(GOOD_MODEFY));
+
+			toastS("添加成功");
+
+		};
+		$("#btn").click(function(){
+			 userName = $("#name").val()
+			 userMob = $("#mob").val()
+			 userProvince = $("#province option:selected").val()
+			 userCity = $("#city option:selected").val()
+			 userArea = $("#area option:selected").val()
+			 userAddress = $("#address").val()
+			if(!checkUserName(userName)) {
+				return false;
+			}
+			if(!checkUserMobile(userMob)) {
+				return false;
+			}
+			if(!checkUserProvince(userProvince)) {
+				return false;
+			}
+			if(!checkUserCity(userCity)) {
+				return false;
+			}
+			if(!checkUserArea(userArea)) {
+				return false;
+			}
+			if(!checkUserAddress(userAddress)) {
+				return false;
+			}
+		})
+
+		function checkUserName(userName) {
+			var result = true;
+			try {
+				if(userName == "") {
+					// alert('请填写姓名！');
+					toastS("请填写姓名！")
+					return false
+				}
+				var name = /^[\u4e00-\u9fa5]{2,6}$/;
+				if(!name.test(userName)) {
+					toastS('姓名格式不正确，请重新填写！');
+				return false
+				}
+		}
+		catch(err) {
+			result = false;
+		}
+		return result
+		};
+
+		function checkUserMobile(userMobile) {
+			var result = true;
+			try {
+				if(userMobile == "") {
+					toastS('请填写手机号码！');
+					return false
+				}
+				var form = /^1[3,4,5,6,7,8,9]\d{9}$/;
+				if(!form.test(userMobile)) {
+					toastS('手机号码格式不正确，请重新填写！');
+					return false
+				}
+			} catch(err) {
+				result = false;
+			}
+			return result
+		};
+
+		function checkUserProvince(province) {
+			var result = true;
+			try {
+				if(province =="") {
+					toastS('请选择所在省份！');
+					return false
+				}
+			} catch(err) {
+				result = false;
+			}
+			return result
+		};
+
+		function checkUserCity(city) {
+			var result = true;
+			try {
+				if(city =="选城市") {
+					toastS('请选择所在城市！');
+			return false
+			}
+		} catch(err) {
+			result = false;
+		}
+		return result
+		};
+
+		function checkUserArea(area) {
+		var result = true;
+		try {
+			if (area == "选地区") {
+				toastS('请选择所在地区！');
+			return false
+			}
+		} catch(err) {
+			result = false;
+		}
+		return result
+		};
+		function checkUserAddress(address) {
+		var result = true;
+		try {
+			if (address == "") {
+				toastS('请填写详细地址！');
+			result = false
+			}
+		} catch(err) {
+			result = false;
+		}
+		return result
+		};
+
+
+    //********
+    //* 购物车
+    //********
+    let settle_accounts_num = 0;
+    let settle_accounts_price = 0;
+    let this_price;
+    let section = document.getElementsByClassName("section");
+
+	//点击全选按钮
+	$(".select_all").click(function(){
+		$(".circle").toggleClass("true")
+		if($(".circle").hasClass("true")){
+			$(".goods").find("i").addClass("selected")
+			settle_accounts_num = $(".selected").length
+			$(".settle_accounts").find("i").text(settle_accounts_num)
+			Array.prototype.forEach.call($(".int"),(item,index) => {
+		    	settle_accounts_price += item.innerText * parseFloat($(".num")[index].value) 
+		    })
+		    $(".settle_accounts").find(".prices").text(settle_accounts_price) 
+		}else{
+			$(".goods").find("i").removeClass("selected")
+			settle_accounts_num = $(".selected").length
+			$(".settle_accounts").find("i").text(settle_accounts_num)
+			settle_accounts_price = 0
+			 $(".settle_accounts").find(".prices").text(settle_accounts_price) 
+		}
+	})
+    
+    
+	//点击减号（-)按钮
+	$(section).on("click",".minus",function(){
+		if($(this).next().children().val() <= 1){
+			toastS("该宝贝数量不能减少了...");
+            return 
+        }
+        let sub = parseInt($(this).next().children().val());
+        sub--;
+        $(this).next().children().val(sub)
+        
+        if($(this).parents(".goods").find("i").hasClass("selected")){
+	     	let sub_price = parseFloat($(this).parents(".goods").find(".int").text())
+	     	settle_accounts_price = parseFloat($(".settle_accounts").find(".prices").text()) - sub_price
+	     	$(".settle_accounts").find(".prices").text(settle_accounts_price) 
+	     }
+	});
+   
+	//点击加号（+)按钮
+	$(section).on("click",".plus",function(){
+		let add = parseInt($(this).prev().children().val());
+		add++;
+		$(this).prev().children().val(add)
+		if($(this).parents(".goods").find("i").hasClass("selected")){
+			let add_price = parseFloat($(this).parents(".goods").find(".int").text())
+			settle_accounts_price = parseFloat($(".settle_accounts").find(".prices").text()) + add_price
+			$(".settle_accounts").find(".prices").text(settle_accounts_price) 
+		}
+	});
+	//点击购物车进入详情页
+	$(section).on("click",".item_single",function(e){
+		if(e.target.className == "selected" || e.target.className == "num" || e.target.className == "plus" || e.target.className == "minus" || e.target.className == "icon_select" ){
+		  return 
+		}
+		let id = $(this).attr("data-id");
+		redens(id);
+
+		//购物车退出
+		document.querySelector(".cart_info").style.cssText = 'transform:translateX(-100%)'
+	})
+	
+
+
+	//点击选中商品按钮
+	$(section).on("click",".icon_select",function(){
+		$(this).children("i").toggleClass("selected")
+    	settle_accounts_num= $(".selected").length
+    	$(".settle_accounts").find("i").text(settle_accounts_num)
+    	
+    	if($(this).children("i").hasClass("selected")){
+    		this_price = parseFloat($(this).children("i").parents(".goods").find(".int").text()) * $(this).children("i").parents(".goods").find(".num").val()
+    		settle_accounts_price += this_price
+    		$(".settle_accounts").find(".prices").text(settle_accounts_price)
+    	}else{
+    		this_price = parseFloat($(this).children("i").parents(".goods").find(".int").text()) * $(this).children("i").parents(".goods").find(".num").val()
+    		settle_accounts_price -= this_price
+    		$(".settle_accounts").find(".prices").text(settle_accounts_price)
+    	}
+    	if($(".goods").find("i.selected").length < $(".goods").find("i").length){
+	    	$(".circle").removeClass("true")
+	    }
+    	if($(".goods").find("i.selected").length == $(".goods").find("i").length){
+	    	$(".circle").addClass("true")
+	    }
+	});
+
+    //点击管理按钮
+    $(".manage").click(function(){
+    	if($(this).text() == "管理"){
+    		$(this).text("完成")
+    		$(".settle_accounts").hide()
+    		$(".del").css("display","flex")
+    	}else{
+    		$(".settle_accounts").show()
+    		$(".del").hide()
+    		$(this).text("管理")
+    	}
+    	
+    })
+    
+    //点击删除按钮
+    $(".del span").click(function(){
+		// $(".goods").find("i.selected").parents(".goods").remove();
+		let pid = $(".goods").find("i.selected").parents(".item_single").attr('data-id');
+		$(".goods").find("i.selected").parents(".item_single").remove();
+		let shoplist = JSON.parse(sessionStorage.car_listinfo);
+		shoplist = shoplist.filter(function(e){
+			return !e.productId.includes(pid);
+		})
+		if(shoplist.length == 0){
+			// sessionStorage.remove("car_listinfo");
+			sessionStorage.setItem("car_listinfo",null);
+		}else{
+			sessionStorage.setItem("car_listinfo",JSON.stringify(shoplist))
+		}
+    	if($(".goods").find("i").length == 0){
+	    	$(".circle").removeClass("true")
+	    }
+    	settle_accounts_price = 0
+		$(".settle_accounts").find(".prices").text(settle_accounts_price)
+		settle_accounts_num = 0
+			$(".settle_accounts").find("i").text(settle_accounts_num)
+    });
+	//  购物车收货修改
+	let modefy = document.querySelector(".adress");
+	modefy.onclick = function(){
+		document.querySelector('.modefy').style.cssText = "transform: translateY(0)";
+		document.querySelector(".modefy_info").style.cssText = 'transform: translateX(0%)';
+
+		console.log('1111');
+		let address_info;
+		let userName;
+		let mobile;
+		let address;
+		let province;
+		let city;
+		let area;
+		address_info = document.getElementById("address_info");
+		userName = document.getElementById("userName");
+		mobile = document.getElementById("mobile");
+		address = document.getElementById("address");
+		province = document.getElementById("province1");
+		city = document.getElementById("city1");
+		area = document.getElementById("area1");
+		let modefy = JSON.parse(sessionStorage.GOOD_MODEFY);
+
+		//  赋值  修改  
+		address_info.value = modefy.userAddress;
+		userName.value = modefy.userName;
+		mobile.value = modefy.userMob;
+		address.value = modefy.userAddress;
+		province.value = modefy.userProvince;
+		province.onchange();
+		city.value = modefy.userCity;
+		city.onchange();
+		area.onchange();
+		area.value = modefy.userArea;
+	}
+	//修改确定
+	let modefy_up = document.querySelector(".modefy_up");
+	modefy_up.onclick = function(){
+		let address_info;
+		let userName;
+		let mobile;
+		let address;
+		let province;
+		let city;
+		let area;
+		address_info = document.getElementById("address_info").value;
+		userName = document.getElementById("userName").value;
+		mobile = document.getElementById("mobile").value;
+		address = document.getElementById("address").value;
+		province = document.getElementById("province1").value;
+		city = document.getElementById("city1").value;
+		area = document.getElementById("area1").value;
+		if(!checkUserName(userName)) {
+				return false;
+			}
+			if(!checkUserMobile(mobile)) {
+				return false;
+			}
+			if(!checkUserProvince(province)) {
+				return false;
+			}
+			if(!checkUserCity(city)) {
+				return false;
+			}
+			if(!checkUserArea(area)) {
+				return false;
+			}
+			if(!checkUserAddress(address_info)) {
+				return false;
+			};
+		document.querySelector(".car_topnav .text").innerHTML = `${province}${city}${area}`;
+		document.querySelector(".modefy").style.cssText = "transform:translateY(100%)";
+		document.querySelector(".modefy_info").style.cssText = 'transform: translateX(100%)';
+
+	};
+
+	/****** 
+	*  阻止滑动
+	*/
+	var content = document.querySelector('.modefy');
+	content.addEventListener('touchmove', function (e) {
+		e.preventDefault();
+	}, false);
+    var shoppage_list = document.querySelector("#shoppage_list");
+	shoppage_list.addEventListener("touchmove",function(e){
+		e.preventDefault();
+	});
+	//进入商城
+	var goshop = document.querySelector(".goshop");
+	goshop.onclick = function(){
+		document.querySelector(".shop_page").style.cssText = "transform: translateX(0);";
+		document.documentElement.style.overflow = "hidden";
+	}  
+
+	/******** 
+	  ** 商城后退
+	*****/
+	var shop_goback = document.querySelector(".shop_goback");
+	shop_goback.onclick = function(){
+		document.querySelector(".shop_page").style.cssText = "transform: translateX(100%);";
+		document.documentElement.style.overflow = "scroll";
+
+	}
+
+
+	//上拉刷新  下拉加载
+	var mescroll = new MeScroll("mescroll", { //第一个参数"mescroll"对应上面布局结构div的id (1.3.5版本支持传入dom对象)
+	       		//如果您的下拉刷新是重置列表数据,那么down完全可以不用配置,具体用法参考第一个基础案例
+	       		//解析: down.callback默认调用mescroll.resetUpScroll(),而resetUpScroll会将page.num=1,再触发up.callback
+				up: {
+					callback: upCallback, //上拉加载的回调
+					//以下是一些常用的配置,当然不写也可以的.
+					page: {
+						num: 0, //当前页 默认0,回调之前会加1; 即callback(page)会从1开始
+						size: 10 //每页数据条数,默认10
+					},
+					htmlNodata: '<p class="upwarp-nodata">-- END --</p>',
+					noMoreSize: 5, //如果列表已无数据,可设置列表的总数量要大于5才显示无更多数据;
+						
+					toTop: {
+						//回到顶部按钮
+						src: "../img/mescroll-totop.png", //图片路径,默认null,支持网络图
+						offset: 1000 //列表滚动1000px才显示回到顶部按钮	
+					},
+					empty: {
+						//列表第一页无任何数据时,显示的空提示布局; 需配置warpId才显示
+						warpId:	"xxid", //父布局的id (1.3.5版本支持传入dom元素)
+						icon: "../img/mescroll-empty.png", //图标,默认null,支持网络图
+						tip: "暂无相关数据~" //提示
+					},
+					lazyLoad: {
+		        			use: true ,// 是否开启懒加载,默认false
+		        			attr: 'imgurl' // 标签中网络图的属性名 : <img imgurl='网络图  src='占位图''/>
+		        		}
+				}
+			});
+
+
+             var page ={
+				 num : 1,
+				 size : 10,
+			 }
+			function upCallback(page) {
+			var pageNum = page.num; // 页码, 默认从1开始 如何修改从0开始 ?
+			var pageSize = page.size; // 页长, 默认每页10条
+
+			console.log('====================================');
+			console.log('jiazai ');
+			console.log('====================================');
+			// $.ajax({
+			// 	url: 'xxxxxx?num=' + pageNum + "&size=" + pageSize,
+			// 	success: function(data) {
+			// 		var curPageData = data.xxx; // 接口返回的当前页数据列表
+			// 		var totalPage = data.xxx; // 接口返回的总页数 (比如列表有26个数据,每页10条,共3页; 则totalPage值为3)
+			// 		var totalSize = data.xxx; // 接口返回的总数据量(比如列表有26个数据,每页10条,共3页; 则totalSize值为26)
+			// 		var hasNext = data.xxx; // 接口返回的是否有下一页 (true/false)
+				
+			// 	},
+			// 	error: function(e) {
+			// 		//联网失败的回调,隐藏下拉刷新和上拉加载的状态
+			// 		mescroll.endErr();
+			// 	}
+			// });
+		}
+		       	
+	</script>
+
+</html>

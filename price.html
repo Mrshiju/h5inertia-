@@ -1,0 +1,766 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购买成功，请耐心等待</title>
+    <link rel="icon" href="data:image/ico;base64,aWNv">
+    <script src=""></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        html,
+        body {
+            width: 100%;
+            height: 100%;
+            text-align: center;
+            background-color: #f9f5f5;
+        }
+        
+        h1 {
+            margin-top: 2rem;
+        }
+        
+        .content {
+            padding: 2rem;
+        }
+        
+        span img {
+            width: 4rem;
+            height: 4rem;
+            text-align: center;
+            line-height: 4rem;
+        }
+        
+        span i {
+            margin-top: 1rem;
+            padding: 1rem;
+        }
+        
+        .bottom {
+            border: 2px greenyellow solid;
+            width: 6rem;
+            margin: 0 auto;
+            color: green;
+            border-radius: 1rem;
+        }
+        .public_title{
+            width: 12rem;
+            padding: 0.625rem 0;
+            margin: 0 auto;
+            color: red;
+            font-size: 1rem;
+            margin-top: 1rem; 
+            text-align: center;
+            /* background: url(https://sms-shop.oss-cn-beijing.aliyuncs.com/shopPicture/index_09.jpg) repeat-x center center; */
+        }
+        .public_title span{
+            background: #f9f5f5;
+            display: block;
+            position: relative;
+        }
+        .public_title span::before{
+            content: "-----";
+            display: block;
+            color: #231a1a;
+            position: absolute;
+        }
+        .public_title span::after{
+            content: "-----";
+            display: block;
+            color: #231a1a;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+        .moreproduct{
+            width: 100%;
+            overflow: hidden;
+            padding: 0.2rem;
+            box-sizing: border-box;
+        }
+       .productlist{
+            width: 49%;
+            overflow: hidden;
+            background: white;
+            float: left;
+            margin-bottom: 0.6rem;
+            border-radius: 0.4rem;
+            box-shadow: 0.2rem 0.2rem #f3f3f3;
+        }
+       .productlist:nth-of-type(2n-1){
+            margin-right: 2%;
+        }
+       .productlist .proimg{
+            width: 100%;
+            position: relative;
+            padding-top: 100%;
+        }
+        .productlist .proimg img{
+            background-size: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+        }
+        .productlist span{
+            font-size: 0.8rem;
+            text-align: left;
+            display: block;
+            padding: 0.2rem;
+            float: left;
+        }
+        .productlist span:first-child{
+            width: 100%;
+            height: 2rem;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .productlist .proimg span{
+            float: left;
+        }
+        .promsg span:nth-child(2){
+            float: left;
+            color: red;
+            font-size: 1rem;
+        }
+        .productlist .promsg span:nth-child(3){
+            color: rgba(170, 170, 170,1);
+            text-decoration: line-through;
+            padding: 0.2rem 0 0 0;
+
+        }
+        .promsg span:last-child{
+            float: right;
+            text-align: center;
+            color: rgba(170, 170, 170,1);
+        }
+    </style>
+    <audio src="./img/minus.mp3"  autoplay="autoplay"> </audio>
+</head>
+
+<body>
+    <div class="public_title"><span>你可能还喜欢</span></div>
+    <div class="moreproduct">
+        <div class="productlist leather">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/leather/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>秋季精品商务皮夹克</span>
+                <span>￥229</span>
+                <span>￥540</span>
+                <span>36841人购买</span>
+            </div>
+        </div>
+        <div class="productlist shave">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/shave/banner.jpeg" alt="">
+            </div>
+            <div class="promsg">
+                <span>德国科技进口剃须刀</span>
+                <span>￥168</span>
+                <span>￥798</span>
+                <span>32141人购买</span>
+            </div>
+        </div>
+
+
+        <div class="productlist strap">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/strap/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>鳄鱼纹自动扣皮带</span>
+                <span>￥129</span>
+                <span>￥299</span>
+                <span>93441人购买</span>
+            </div>
+        </div>
+        <div class="productlist bookse">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/booke/bannerse.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>中国古典文化荟萃7册</span>
+                <span>￥68</span>
+                <span>￥188</span>
+                <span>14541人购买</span>
+            </div>
+        </div>
+        <div class="productlist booknf" >
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/book54/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>惊喜！惊喜！54册只需268元</span>
+                <span>￥268</span>
+                <span>￥288</span>
+                <span>45141人购买</span>
+            </div>
+        </div>
+        <div class="productlist hellip">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/hellip/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>精装典藏版四大名著</span>
+                <span>￥188</span>
+                <span>￥298</span>
+                <span>94541人购买</span>
+            </div>
+        </div>
+        <div class="productlist inspriational">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/inspriational/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>强者成功法则大全集</span>
+                <span>￥96</span>
+                <span>￥198</span>
+                <span>78983人购买</span>
+            </div>
+        </div>
+        <div class="productlist selfhelp">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/selfhelp/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>青少年成长励志书籍中小学课外阅读必读</span>
+                <span>￥128</span>
+                <span>￥298</span>
+                <span>54541人购买</span>
+            </div>
+        </div>
+        <div class="productlist mustread">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/mustread/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>优秀少年成长必读系列</span>
+                <span>￥98</span>
+                <span>￥116</span>
+                <span>78231人购买</span>
+            </div>
+        </div>
+       
+        <div class="productlist cleaner">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/ncheaner/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>扫拖吸一体智能机器人</span>
+                <span>￥199</span>
+                <span>￥288</span>
+                <span>45441人购买</span>
+            </div>
+        </div>
+        <div class="productlist massage">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/massage/banner.gif" alt="">
+            </div>
+            <div class="promsg">
+                <span>多功能颈部按摩仪，颈椎健康的福音!</span>
+                <span>￥199</span>
+                <span>￥299</span>
+                <span>24541人购买</span>
+            </div>
+        </div>
+        <div class="productlist headphones">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/headphones/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>无线蓝牙耳机迷你耳机</span>
+                <span>￥98</span>
+                <span>￥198</span>
+                <span>43541人购买</span>
+            </div>
+        </div>
+        <div class="productlist tea">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/tea/banenr.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>忆江南碧螺春</span>
+                <span>￥99</span>
+                <span>￥199</span>
+                <span>124341人购买</span>
+            </div>
+        </div>
+        <div class="productlist worldfamouso">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/worldfamousP/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+               <span>儿童经典课外阅读注音精华版十本</span>
+                <span>￥118</span>
+                <span>￥288</span>
+                <span>171341人购买</span>
+            </div>
+        </div>
+        <div class="productlist sounds">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/sounds/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>便携式小钢炮蓝牙音响</span>
+                <span>￥128</span>
+                <span>￥288</span>
+                <span>17441人购买</span>
+            </div>
+        </div>
+        <div class="productlist water">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/water/banenr.png" alt="">
+            </div>
+            <div class="promsg">
+               <span>便携式镜面补水仪</span>
+                <span>￥59</span>
+                <span>￥129</span>
+                <span>75441人购买</span>
+            </div>
+        </div>
+        <div class="productlist juicer">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/juicer/banenr.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>每天一杯鲜果汁便携式榨汁机</span>
+                <span>￥99</span>
+                <span>￥388</span>
+                <span>73441人购买</span>
+            </div>
+        </div>
+        <div class="productlist weighing">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/weighing/banenr.png" alt="">
+            </div>
+            <div class="promsg">
+                 <span>家用钢化体重计</span>
+                <span>￥88</span>
+                <span>￥266</span>
+                <span>324541人购买</span>
+            </div>
+        </div>
+        <div class="productlist shoe">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/shoe/banner%20.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>老北京布鞋</span>
+                <span>￥139</span>
+                <span>￥199</span>
+                <span>424541人购买</span>
+            </div>
+        </div>
+        <div class="productlist suit">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/suit/banenr.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>紧身后系绑带情趣内衣诱惑</span>
+                <span>￥88</span>
+                <span>￥188</span>
+                <span>47941人购买</span>
+            </div>
+        </div>
+        <div class="productlist augment">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/argument/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>男士JJ阴茎增粗增大按摩啫喱膏</span>
+                <span>￥58</span>
+                <span>￥158</span>
+                <span>79343人购买</span>
+            </div>
+        </div>
+        <div class="productlist lupe">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/lupe/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                 <span>极润人体润滑剂拉丝油</span>
+                <span>￥88</span>
+                <span>￥158</span>
+                <span>84567人购买</span>
+            </div>
+        </div>
+        <div class="productlist porecleaner">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/porecleaner/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>五档毛孔清洁神器</span>
+                <span>￥99</span>
+                <span>￥199</span>
+                <span>44541人购买</span>
+            </div>
+        </div>
+        <div class="productlist toothbrush">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/toothbrush/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                 <span>成人儿童硅胶电动牙刷</span>
+                <span>￥98</span>
+                <span>￥1299</span>
+                <span>84567人购买</span>
+            </div>
+        </div>
+        <div class="productlist voice">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/voice/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                 <span>掌上KTV飙歌神器</span>
+                <span>￥88</span>
+                <span>￥268</span>
+                <span>745567人购买</span>
+            </div>
+        </div>
+        <div class="productlist watch">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/watch/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>儿童智能电话手表</span>
+                <span>￥138</span>
+                <span>￥599</span>
+                <span>135467人购买</span>
+            </div>
+        </div>
+        <div class="productlist airbed">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/airbed/5.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>车载充气旅行床</span>
+                <span>￥499</span>
+                <span>￥1599</span>
+                <span>32547人购买</span>
+            </div>
+        </div>
+        <div class="productlist buildingblock">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/buildingblock/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>儿童拼装益智玩具</span>
+                <span>￥99</span>
+                <span>￥189</span>
+                <span>35647人购买</span>
+            </div>
+        </div>
+        <div class="productlist loupe">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/loupe/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                 <span>手持带LED灯老人阅读放大镜</span>
+                <span>￥58</span>
+                <span>￥98</span>
+                <span>433147人购买</span>
+            </div>
+        </div> 
+        <div class="productlist telescoping">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/telescoping/banenr.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>超级望远镜</span>
+                <span>￥198</span>
+                <span>￥888</span>
+                <span>98147人购买</span>
+            </div>
+        </div>
+        <div class="productlist earcleaner">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/earcleaner/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>Find Back掏耳神器器</span>
+                <span>￥49</span>
+                <span>￥129</span>
+                <span>84317人购买</span>
+            </div>
+        </div>
+        <div class="productlist belt">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/belt/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>抖音同款爆汗瘦身腰带</span>
+                <span>￥99</span>
+                <span>￥268</span>
+                <span>78931人购买</span>
+            </div>
+        </div>
+        <div class="productlist lipstick">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/lipstick/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>网红爆款中国风故宫口红</span>
+                <span>￥99</span>
+                <span>￥198</span>
+                <span>79243人购买</span>
+            </div>
+        </div>
+        <div class="productlist yogurt">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/yogurt/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>全自动酸奶机</span>
+                <span>￥99</span>
+                <span>￥288</span>
+                <span>98769人购买</span>
+            </div>
+        </div>
+        <div class="productlist tshirt">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/tshirt/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>高精细印花男式短袖T恤男女同款</span>
+                <span>￥68</span>
+                <span>￥158</span>
+                <span>23949人购买</span>
+            </div>
+        </div>
+        <div class="productlist dress">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/dress/banner.jpg" alt="">
+            </div>
+            <div class="promsg">
+                <span>碎花雪纺连衣裙女装</span>
+                <span>￥109</span>
+                <span>￥299</span>
+                <span>13783人购买</span>
+            </div>
+        </div>
+       
+        <div class="productlist lighter">
+                <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/lighter/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>指纹感应打火机</span>
+                <span>￥79</span>
+                <span>￥199</span>
+                <span>238483人购买</span>
+            </div>
+        </div>
+        <div class="productlist soat">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/soap/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>抖音爆款拉丝除螨皂</span>
+                <span>￥79</span>
+                <span>￥168</span>
+                <span>13748人购买</span>
+            </div>
+        </div>
+        <div class="productlist patch">
+            <div class="proimg">
+                <img src="https://sms-shop.oss-cn-beijing.aliyuncs.com/patch/banner.png" alt="">
+            </div>
+            <div class="promsg">
+                <span>艾绒热敷真丝眼罩</span>
+                <span>￥139</span>
+                <span>￥339</span>
+                <span>36448人购买</span>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://sms-shop.oss-cn-beijing.aliyuncs.com/common/js/jquery.min.js"></script>
+<script src="../flies/js/index.min.js"></script>
+<script>
+    let topid = window.localStorage.topid;
+    let backUrl = window.localStorage.backUrl;
+   
+    var baseUrl = DEAUTFUL_URL_REDIRECT+`?cid=${pcid}&mobile=${mobile}&url=`+DEAUTFUL_URL_SHOP;
+		$(".cleaner").click(function() {
+            defOnClick("机器除尘器-点击");
+            window.location.href = baseUrl+`/sgbangle/cleaner&des=机器除尘器`;
+        });
+
+        $(".bookse").click(function(){
+            defOnClick("国学经典7-点击");
+            window.location.href = baseUrl+`/sgbangle/bookse&des=国学经典7`;
+        });
+
+        $(".booknf").click(function(){
+            defOnClick("国学经典54-点击");
+            window.location.href = baseUrl+`/sgbangle/booknf&des=国学经典54`;
+        });
+
+        $(".massage").click(function(){
+            defOnClick("按摩仪-点击");
+            window.location.href = baseUrl+`/sgbangle/massage&des=按摩仪`;
+        });
+        $(".mustread").click(function(){
+            defOnClick("少年必读系列-点击");
+            window.location.href = baseUrl+`/sgbangle/mustread&des=少年必读系列`;
+        });
+        $(".selfhelp").click(function(){
+            defOnClick("青少年成长励志书籍-点击");
+            window.location.href = baseUrl+`/sgbangle/selfhelp&des=青少年成长励志书籍`;
+        });
+        $(".hellip").click(function(){
+            defOnClick("精装典藏版四大名著-点击");
+            window.location.href = baseUrl+`/sgbangle/hellip&des=精装典藏版四大名著`;
+        });
+        $(".headphones").click(function(){
+            defOnClick("迷你蓝牙耳机-点击");
+            window.location.href = baseUrl+`/sgbangle/headphones&des=迷你蓝牙耳机`;
+        });
+        $(".tea").click(function(){
+            defOnClick("碧螺春茶叶-点击");
+            window.location.href = baseUrl+`/sgbangle/tea&des=碧螺春茶叶`;
+        });
+        $(".worldfamouso").click(function(){
+            window.location.href = baseUrl+`/sgbangle/worldfamouso&des=儿童图书`,
+            defOnClick("儿童图书-点击");
+        });
+        $(".sounds").click(function(){
+            defOnClick("便携式蓝牙音响-点击");
+            window.location.href = baseUrl+`/sgbangle/sounds&des=便携式蓝牙音响`;
+        });
+        $(".water").click(function(){
+            defOnClick("补水仪-点击");
+            window.location.href = baseUrl+`/sgbangle/water&des=补水仪`;
+        });
+        $(".juicer").click(function(){
+            defOnClick("榨汁机-点击");
+            window.location.href = baseUrl+`/sgbangle/juicer&des=榨汁机`;
+        });
+        $(".weighing").click(function(){
+            defOnClick("体重计-点击");
+            window.location.href = baseUrl+`/sgbangle/weighing&des=体重计`;
+        });
+        $(".shoe").click(function(){
+            defOnClick("老北京布鞋-点击");
+            window.location.href = baseUrl+`/sgbangle/shoe&des=老北京布鞋`;
+        });
+        $(".porecleaner").click(function(){
+            defOnClick("毛孔清洁器-点击");
+            window.location.href = baseUrl+`/sgbangle/porecleaner&des=毛孔清洁器`;
+        });
+        $(".toothbrush").click(function(){
+            defOnClick("儿童电动牙刷-点击");
+            window.location.href = baseUrl+`/sgbangle/toothbrush&des=儿童电动牙刷`;
+        });
+        $(".voice").click(function(){
+            defOnClick("话筒-点击");
+            window.location.href = baseUrl+`/sgbangle/voice&des=话筒`;
+        });
+        $(".watch").click(function(){
+            defOnClick("儿童智能手表-点击");
+            window.location.href = baseUrl+`/sgbangle/watch&des=儿童智能手表`;
+        });
+        $(".airbed").click(function(){
+            defOnClick("充气床-点击");
+            window.location.href = baseUrl+`/sgbangle/airbed&des=充气床`;
+        });
+        $(".buildingblock").click(function(){
+            defOnClick("儿童积木-点击");
+            window.location.href = baseUrl+`/sgbangle/buildingblock&des=儿童积木`;
+        });
+        $(".loupe").click(function(){
+            defOnClick("带灯放大镜-点击");
+            window.location.href = baseUrl+`/sgbangle/loupe&des=带灯放大镜`;
+        });
+        $(".telescoping").click(function(){
+            defOnClick("超级望远镜-点击");
+            window.location.href = baseUrl+`/sgbangle/telescoping&des=超级望远镜`;
+        });
+        $(".earcleaner").click(function(){
+            defOnClick("采耳-点击");
+            window.location.href = baseUrl+`/sgbangle/earcleaner&des=采耳`;
+        });
+        $(".belt").click(function(){
+            defOnClick("瘦身腰带-点击");
+            window.location.href = baseUrl+`/sgbangle/belt&des=瘦身腰带`;
+        });
+        $(".lipstick").click(function(){
+            defOnClick("故宫口红-点击");
+            window.location.href = baseUrl+`/sgbangle/lipstick&des=故宫口红`;
+        });
+        // $(".carryfood").click(function(){
+        //     defOnClick("便携拎袋器-点击");
+        //     window.location.href = baseUrl+`/sgbangle/carryfood&des=便携拎袋器`;
+        // });
+        $(".yogurt").click(function(){
+            defOnClick("酸奶机-点击");
+            window.location.href = baseUrl+`/sgbangle/yogurt&des=酸奶机`;
+        });
+        $(".tshirt").click(function(){
+            defOnClick("T恤-点击");
+            window.location.href = baseUrl+`/sgbangle/tshirt&des=T恤`;
+        });
+        $(".dress").click(function(){
+            defOnClick("连衣裙-点击");
+            window.location.href = baseUrl+`/sgbangle/dress&des=连衣裙`;
+        });
+        $(".inspriational").click(function(){
+            defOnClick("成功法则大全集-点击");
+            window.location.href = baseUrl+`/sgbangle/inspriational&des=成功法则大全集`;
+        });
+        $(".sexboy").click(function(){
+            defOnClick("飞机杯-点击");
+            window.location.href = baseUrl+`/sgbangle/sexboy&des=飞机杯`;
+        });
+        $(".augment").click(function(){
+            defOnClick("增大剂-点击");
+            window.location.href = baseUrl+`/sgbangle/augment&des=增大剂`;
+        });
+        $(".lupe").click(function(){
+            defOnClick("润滑剂-点击");
+            window.location.href = baseUrl+`/sgbangle/lupe&des=润滑剂`;
+        });
+        $(".suit").click(function(){
+            defOnClick("套装睡衣-点击");
+            window.location.href = baseUrl+`/sgbangle/suit&des=套装睡衣`;
+        });
+        $(".lighter").click(function(){
+            defOnClick("打火机-点击");
+            window.location.href = baseUrl+`/sgbangle/lighter&des=打火机`;
+        });
+        $(".soat").click(function(){
+            defOnClick("除螨皂-点击");
+            window.location.href = baseUrl+`/sgbangle/soat&des=除螨皂`;
+        });
+        $(".patch").click(function(){
+            defOnClick("蒸汽眼罩-点击");
+            window.location.href = baseUrl+`/sgbangle/patch&des=蒸汽眼罩`;
+        });
+        
+        $(".leather").click(function(){
+            defOnClick("皮衣-点击");
+            window.location.href = baseUrl+`/sgbangle/leather&des=皮衣`;
+        });
+        $(".shave").click(function(){
+            defOnClick("剃须刀-点击");
+            window.location.href = baseUrl+`/sgbangle/shaver&des=剃须刀`;
+        });
+        $(".strap").click(function(){
+            defOnClick("皮带-点击");
+            window.location.href = baseUrl+`/sgbangle/strap&des=皮带`;
+        });
+	
+</script>
+
+</html>

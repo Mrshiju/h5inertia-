@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        html,body{
+            height: 100%;
+            width: 100%;
+            background: #f7f7f7;
+        }
+        h1{
+            font-weight: normal;
+            font-size: 1.2rem;
+        }
+        .top{
+            width: 100%;
+            z-index: 99;
+            text-align: center;
+            line-height: 2.6rem;
+            height: 2.6rem;
+            border-bottom: 0.1rem solid #f3f3f3;
+        }
+        .goback{
+            text-align: left;
+            float: left;
+            padding: 1rem;
+            box-sizing: border-box;
+        }
+        .goback div:last-child{
+            text-align: left;
+            float: left;
+        }
+        .goback::before{
+            content: "";
+            width: 0.6rem;
+            height: 0.6rem;
+            /* float: left; */
+            border-top: 0.1rem solid black;
+            border-left: 0.1rem solid black;
+            display: block;
+            transform: rotate(-45deg);
+        }
+        section {
+            position: relative;
+            margin-bottom: 15px;
+            background: #fff;
+            overflow: hidden;
+            margin-bottom: 0.4rem;
+        }
+        .section .item {
+            position: relative;
+            overflow: hidden;
+            background: #fff;
+        }
+        .section .head_wrap+.item_single .goods {
+            padding-top: 0;
+        }
+        .section .goods {
+            z-index: 1;
+            position: relative;
+            min-height: 100px;
+            padding: 20px 0 20px 150px;
+            background: #fff;
+            -webkit-overflow-scrolling: touch;
+        }
+        .section .goods .icon_select {
+            left: 0;
+            width: 50px;
+            height: 100%;
+        }
+        .icon_select {
+            z-index: 1;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 42px;
+            height: 43px;
+        }
+        .icon_select:after {
+            position: absolute;
+            left: 50%;
+            top: 48%;
+            content: "";
+            margin-left: -10px;
+            background-image: url(https://wq.360buyimg.com/wxsq_trade/cart_vue/main/images/sprite.img_default_437_131a0187.png);
+            background-position: 0 -48px;
+            background-size: 116px 110px;
+            width: 20px;
+            height: 20px;
+        }
+        .section .head_wrap+.item_single .goods .image {
+            top: 0;
+        }
+        .section .goods .image {
+            position: absolute;
+            left: 40px;
+            top: 23px;
+            display: block;
+            width: 100px;
+            height: 100px;
+            box-shadow: 0 0 18px 0 rgba(0,0,0,.05);
+            border-radius: 2px;
+        }
+        img {
+            border: 0;
+            vertical-align: top;
+        }
+        .section .goods .name {
+            font-size: 14px;
+            padding-right: 10px;
+            margin-bottom: 3px;
+            word-break: break-all;
+            position: relative;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .mod_tag {
+            display: inline-block;
+            vertical-align: middle;
+            height: 14px;
+        }
+        .mod_tag .tag_img {
+            display: block;
+            height: 100%;
+        }
+        img {
+            border: 0;
+            vertical-align: top;
+        }
+        .shop_gift_box_wrap_quan_wrap .gift_info_text {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        .section .goods .sku_line {
+            display: -webkit-box;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-box-align: center;
+            -webkit-align-items: center;
+            align-items: center;
+            margin: 5px 10px 0 0;
+            -webkit-box-pack: justify;
+            -webkit-justify-content: space-between;
+            justify-content: space-between;
+            font-size: 10px;
+        }
+        .section .goods .price_line .price {
+            font-family: JDZH-Regular;
+            -webkit-box-flex: 1;
+            -webkit-flex: 1;
+            flex: 1;
+            line-height: 16px;
+            color: #f2270c;
+            font-size: 10px;
+            float: left;
+        }
+        .section .num_wrap {
+            position: relative;
+            display: block;
+            width: 72px;
+            border-radius: 2px;
+            overflow: hidden;
+            background-color: #f7f7f7;
+            font-weight: 400;
+            float: right;
+        }
+        
+        .section .num_wrap .minus, .section .num_wrap .num, .section .num_wrap .plus {
+            position: relative;
+            float: left;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+        }
+        .section .num_wrap .minus:after, .section .num_wrap .plus:after, .section .num_wrap .plus:before{
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            content: "";
+            display: block;
+            width: 10px;
+            height: 2px;
+            margin: -1px 0 0 -5px;
+            background: #333;
+            border-radius: 1px;
+        }
+        .section .num_wrap .input_wrap {
+            float: left;
+            position: relative;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+        }
+        .section .num_wrap .plus {
+            float: right;
+        }
+        .section .num_wrap .plus:before {
+            width: 2px;
+            height: 10px;
+            margin: -5px 0 0 -1px;
+            border-radius: 1px;
+        }
+        .section .num_wrap .minus, .section .num_wrap .num, .section .num_wrap .plus {
+            position: relative;
+            float: left;
+            width: 20px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body style="font-size: 12px;">
+    <div class="cart_info">
+    <head>
+        <div class="top">
+            <div class="goback">
+
+            </div>
+            <div>
+                <h1>购物车</h1>
+            </div>
+        </div>
+    </head>
+    <main>
+        <div class="section">
+            <div class="item item_single">
+                <div class="goods">
+                    <i class="icon_select"></i> 
+                    <img  src="https://img10.360buyimg.com/mobilecms/s234x234_jfs/t17707/345/809234140/171252/ea6bf61e/5aaa2663N504bfa8d.jpg!q70.dpg.webp" class="image"> 
+                    <div class="content">
+                        <div class="name">
+                            <span class="mod_tag">
+                                <img src="https://img11.360buyimg.com/jdphoto/s88x28_jfs/t26887/23/1744445436/2452/b4547785/5bebd299N13bd2a1f.png" class="tag_img">
+                            </span>
+                            NYX 16色眼影盘  平价268替代色 2018新款十色眼影大地色珠光哑光 元素12色眼影盘FIRE火盘
+                        </div>
+                    </div> 
+                    <div class="sku_line">
+                        <div class="sku">元素12色眼影盘FIRE火盘</div> 
+                    </div> 
+                    <div class="price_line">
+                        <div class="price">
+                            ¥<em class="int">338</em><span>.00</span>
+                        </div>
+                        <div class="num_wrap">
+                            <span class="minus"></span>
+                            <div class="input_wrap"><input type="tel" class="num" value="1"></div>
+                            <span class="plus"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>    
+        </div>
+     </main>
+     </div>
+</body>
+<script>
+    // **********
+    //* 购物车
+    //********
+    var minus = document.querySelector(".minus");
+    var plus = document.querySelector(".plus");
+    var nums = document.querySelector(".num");
+    minus.onclick = function(){
+        if(nums.value <= 1){
+            return 
+        }
+        nums.value -- ;
+    };
+    plus.onclick = function(){
+        nums.value ++ ;
+    };
+</script>
+</html>
